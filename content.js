@@ -78,9 +78,7 @@ const findTheApproveButton = function () {
 
       allButton[i].querySelector('[dir="auto"]').textContent =
         "Get Info and Approve";
-      document
-        .querySelector('[aria-label="Approve"]')
-        .parentNode.parentNode.prepend(getInfoButton);
+      allButton[i].parentNode.parentNode.prepend(getInfoButton);
 
       getInfoButton.addEventListener("click", showinfo);
     }
