@@ -23,16 +23,27 @@ contentForm.setAttribute("style", "white-space: pre-wrap");
 /**
  *  On load, called to load the auth2 library and API client library.
  */
+<<<<<<< HEAD
 function handleClientLoad() {
   console.log("Called");
   gapi.load("client:auth2", initClient);
 }
+=======
+const handleClientLoad = function () {
+  console.log("Called");
+  gapi.load("client:auth2", initClient);
+};
+>>>>>>> main
 
 /**
  *  Initializes the API client library and sets up sign-in state
  *  listeners.
  */
+<<<<<<< HEAD
 function initClient() {
+=======
+const initClient = function () {
+>>>>>>> main
   console.log("Inital");
   gapi.client
     .init({
@@ -56,7 +67,11 @@ function initClient() {
         appendPre(JSON.stringify(error, null, 2));
       }
     );
+<<<<<<< HEAD
 }
+=======
+};
+>>>>>>> main
 
 /**
  *  Called when the signed in status changes, to update the UI
