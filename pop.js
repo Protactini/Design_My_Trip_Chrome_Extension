@@ -23,56 +23,46 @@ contentForm.setAttribute("style", "white-space: pre-wrap");
 /**
  *  On load, called to load the auth2 library and API client library.
  */
-<<<<<<< HEAD
 function handleClientLoad() {
   console.log("Called");
   gapi.load("client:auth2", initClient);
 }
-=======
 const handleClientLoad = function () {
   console.log("Called");
   gapi.load("client:auth2", initClient);
 };
->>>>>>> main
 
 /**
  *  Initializes the API client library and sets up sign-in state
  *  listeners.
  */
-<<<<<<< HEAD
 function initClient() {
-=======
-const initClient = function () {
->>>>>>> main
-  console.log("Inital");
-  gapi.client
-    .init({
-      apiKey: API_KEY,
-      clientId: CLIENT_ID,
-      discoveryDocs: DISCOVERY_DOCS,
-      scope: SCOPES,
-    })
-    .then(
-      function () {
-        console.log("Second");
-        /* Listen for sign-in state changes. */
-        gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+  const initClient = function () {
+    console.log("Inital");
+    gapi.client
+      .init({
+        apiKey: API_KEY,
+        clientId: CLIENT_ID,
+        discoveryDocs: DISCOVERY_DOCS,
+        scope: SCOPES,
+      })
+      .then(
+        function () {
+          console.log("Second");
+          /* Listen for sign-in state changes. */
+          gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
 
-        /* Handle the initial sign-in state. */
-        updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-        authorizeButton.addEventListener("click", handleAuthClick);
-        signoutButton.addEventListener("click", handleSignoutClick);
-      },
-      function (error) {
-        appendPre(JSON.stringify(error, null, 2));
-      }
-    );
-<<<<<<< HEAD
+          /* Handle the initial sign-in state. */
+          updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+          authorizeButton.addEventListener("click", handleAuthClick);
+          signoutButton.addEventListener("click", handleSignoutClick);
+        },
+        function (error) {
+          appendPre(JSON.stringify(error, null, 2));
+        }
+      );
+  };
 }
-=======
-};
->>>>>>> main
-
 /**
  *  Called when the signed in status changes, to update the UI
  *  appropriately. After a sign-in, the API is called.
