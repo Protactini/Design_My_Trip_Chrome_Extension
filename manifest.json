@@ -1,26 +1,28 @@
 {
-    "name": "Find the info",
-    "version": "1.0.0",
-    "description": "DesignMyTrip Project",
-    "manifest_version": 2,
-    "background": {
-        "scripts": ["background.js"],
-        "persistent": false
-    },
-    "permissions": ["bookmarks", "storage"],
-    "content_scripts": [{
-        "matches": [
-            "https://www.facebook.com/groups/travelwithfriendsandfamily/member-requests/*"
-        ],
-        "js": ["content.js"]
-    }],
-    "icons": {
-        "16": "20210310202236.png",
-        "48": "20210310202236.png",
-        "128": "20210310202236.png"
-    },
-    "browser_action": {
-        "default_title": "Design My Trip",
-        "default_popup": "pop.html"
+  "name": "Find the info",
+  "version": "1.0.0",
+  "description": "DesignMyTrip Project",
+  "manifest_version": 2,
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "permissions": ["bookmarks", "storage"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.facebook.com/groups/travelwithfriendsandfamily/member-requests/*"
+      ],
+      "js": ["api.js", "content.js"]
     }
+  ],
+  "icons": {
+    "16": "20210310202236.png",
+    "48": "20210310202236.png",
+    "128": "20210310202236.png"
+  },
+  "browser_action": {
+    "default_title": "Design My Trip",
+    "default_popup": "pop.html"
+  }
 }
